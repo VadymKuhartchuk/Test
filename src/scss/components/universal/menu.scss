@@ -1,0 +1,67 @@
+.menu{
+
+    position: absolute;
+    top: 0;
+    left: -100%;
+
+    width: 100%;
+    overflow-y: auto;
+    
+
+    background: $color_text_accent;
+
+    transition: .3s;
+
+    .body--open_menu_state &{
+        left: 0;
+    }
+    
+    &__body{
+        overflow-y: auto;
+
+        @include flex_block(column, nowrap, center,flex-start,center);
+
+        height: 100vh;
+        width: 100%;
+    
+        padding: 3.8125rem;
+    }
+
+    &__list{
+        width: 100%;
+        overflow-y: auto;
+        @include flex_block(column, nowrap, flex-start);
+        row-gap: 1.875rem;
+
+        &:not(:last-child) {
+            padding-bottom: 3.625rem;
+            margin-bottom: 3.75rem;
+            border-bottom: 1px solid rgba($white, .2);
+        }
+    }
+
+    &__link{
+        font-size: 1.875rem;
+        font-weight: 900;
+        color: $white;
+
+        transition: .3s;
+
+        @media (any-hover: hover){
+            &:hover{
+                opacity: .8;
+            }
+        }
+    }
+
+    
+}
+
+.sub-menu{
+    row-gap: .625rem;
+
+    .menu__link{
+        font-size: 1.25rem;
+        font-weight: 400;
+    }
+}

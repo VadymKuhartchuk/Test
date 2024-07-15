@@ -1,0 +1,53 @@
+.section{
+    &__in{
+        max-width: 70.4375rem;
+    }
+}
+
+//---------------------------------------------sections
+.hero{
+    &__in{
+		max-width: 84.375rem;
+		min-height: calc(100vh - var(--height-header));
+        padding-block: 3.75rem;
+
+        @include flex_block(column, nowrap, flex-end);
+
+        @include bp($point_6){
+            padding-inline: 0;
+            padding-bottom: 0;
+        }
+    }
+
+    &__content{
+
+        max-width: 43.75rem;
+        padding: 3.125rem;
+
+        background: rgba($white, .9);
+
+        @include bp($point_6){
+            padding: 2rem;
+        }
+    }
+
+    &__title{
+
+        @include h1();
+        color: $color_text_accent;
+
+        text-transform: uppercase;
+
+        &:not(:last-child) {
+            margin-bottom: .625rem;
+        }
+    }
+
+    &__descr{
+        &:not(:last-child) {
+            margin-bottom: 1.625rem;
+        }
+    }
+}
+
+  

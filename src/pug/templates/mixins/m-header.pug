@@ -1,0 +1,38 @@
+mixin header
+	header.header.js-header
+		.header__in
+			a.logo(href="/")
+				img.logo__img(src="../../images/logo.png", alt="Logo") 
+
+			nav.menu
+				.menu__body
+					+menu({
+						gl_class: 'menu',
+						items: [
+							{ 
+								title: 'About Us', 
+								url: '#!', 
+								active: true,
+								subItems: [
+									{ title: 'About RTC', url: '#!' },
+									{ title: 'About a4i', url: '#!' },
+									{ title: 'About our partners', url: '#!' },
+								]
+							},
+							{ title: 'Knowledge Hub', url: '#!', active: false },
+							{ title: 'Innovators Directory', url: '#!', active: false },
+							{ title: 'Application Portal', url: '#!', active: false },
+							{ title: 'News & Updates', url: '#!', active: false }
+						]
+					})
+
+					+social({
+						items: [
+							{ name_icon: 'instagram', mod_icon: 'social-icon icon-instagram', mod_link: 'link-instagram' },
+							{ name_icon: 'facebook', mod_icon: 'social-icon icon-facebook', mod_link: 'link-facebook' },
+							{ name_icon: 'twitter', mod_icon: 'social-icon icon-twitter', mod_link: 'link-twitter' }
+						]
+					})
+
+			button.header__menu_trigger.js-header-menu-trigger(type="button" aria-label="Toggle menu")
+				span Menu
